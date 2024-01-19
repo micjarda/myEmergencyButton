@@ -1,20 +1,22 @@
 const express = require("express");
 const router = express.Router();
 
-const shopControler = require("../controllers/commands");
+const callControler = require("../controllers/commands");
 
 router.post("/create", async (req, res) => {
   console.log(req.body);
   const {
-    buttonId
+    buttonId,
+    pushType
   } = req.body;
   try {
-    const shopList = await shopControler.create({
-        buttonId
+    const callCreate = await callControler.create({
+        buttonId,
+        pushType
     });
-    res.status(201).json(shopList);
+    res.status(201).json(callCreate);
   } catch (error) {
-    res.status(500).json({ error: "chyba" });
+    res.status(500).json({ error: error });
   }
 });
 
