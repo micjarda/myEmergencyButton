@@ -5,7 +5,7 @@ function App() {
     <>
       <Sidebar />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

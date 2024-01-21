@@ -1,0 +1,21 @@
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Nastavuje výšku na 100% výšky obrazovky */
+}
+
+.alert-circle {
+  height: 15vw;
+  width: 15vw;
+  background-color: #ff3e3e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-icon {
+  color: white; /* Nastavuje barvu fajfky na bílou nebo jinou vhodnou barvu */
+  font-size: 10vw; /* Nastavuje velikost fajfky relativně k velikosti kolečka */
+}

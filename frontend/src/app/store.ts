@@ -12,7 +12,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 // Reducers
-import userSlice from "../features/slices/userSlice";
+import callSlice from "../features/slices/callSlice";
 // Api
 import { buttonApi } from "../features/api/buttonapi";
 const persistConfig = {
@@ -20,24 +20,17 @@ const persistConfig = {
   storage,
 };
 
-const persistedUsers = persistReducer(persistConfig, userSlice);
+const persistedCalls = persistReducer(persistConfig, callSlice);
 
 const store = configureStore({
   reducer: {
-    users: persistedUsers,
+    calls: persistedCalls,
     [buttonApi.reducerPath]: buttonApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [
-          FLUSH,
-          REHYDRATE,
-          PAUSE,
-          PERSIST,
-          PURGE,
-          REGISTER,
-        ],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(buttonApi.middleware),
 });

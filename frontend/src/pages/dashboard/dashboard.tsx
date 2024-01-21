@@ -1,12 +1,15 @@
-import { useCallList1Query } from "../../features/api/buttonapi"
-const Dashboard = () => {
-    const { data } = useCallList1Query()
-    return (
-        <div>
-            dashboard
-            <p>Data: {data}</p>
-        </div>
-    )
-}
+import { Spacer } from "@chakra-ui/react";
+import Calls from "../../components/calls/calls";
+import Patients from "../../components/patients/patients";
 
-export default Dashboard
+const Dashboard = () => {
+  return (
+    <div>
+      <Calls />
+      <Spacer marginBottom="20px" />
+      <Patients />
+    </div>
+  );
+};
+
+export default Dashboard;

@@ -1,0 +1,9 @@
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-screen-spinner {
+  margin: 0 auto;
+}
